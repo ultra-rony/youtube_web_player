@@ -1,5 +1,10 @@
+/// A collection of constants used in the YouTube Web Player.
 class Constants {
+  /// A unique key to identify the YouTube web player.
   static String playerKey = "youtube_web_player";
+
+  /// HTML template for the YouTube player embedded in a WebView.
+  /// The %VIDEO_ID% placeholder will be replaced with the actual video ID when rendering.
   static String webPlayer = """
   <!DOCTYPE html>
   <html lang="en">
