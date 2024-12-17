@@ -8,7 +8,7 @@ To use this package, add it to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  youtube_web_player: ^0.0.5
+  youtube_web_player: ^0.0.6
 ```
 ## or
 ```yaml
@@ -38,8 +38,6 @@ Widget build(BuildContext context) {
 }
 ```
 
-<div align="left">
-  <div style="display: flex;">
-        <img src="https://i.ibb.co/VtXzYp0/image-18-12-24-12-51.png" width="50%" alt=""/>
-    </div>
+<div style="display: flex;">
+    <img src="https://i.ibb.co/VtXzYp0/image-18-12-24-12-51.png" width="50%" alt=""/>
 </div>
