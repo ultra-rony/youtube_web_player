@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         body: Center(
           child: SizedBox(
-            height: MediaQuery.of(context).size.height * 0.5,
+            height: MediaQuery.of(context).size.height * 0.3,
             // https://www.youtube.com/watch?v=LpRZi_cOSOI
             child: YoutubeWebPlayer(videoId: 'LpRZi_cOSOI'),
           ),

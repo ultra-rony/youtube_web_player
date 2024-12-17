@@ -8,7 +8,7 @@ To use this package, add it to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  youtube_web_player: ^0.0.3
+  youtube_web_player: ^0.0.4
 ```
 ## or
 ```yaml
@@ -28,7 +28,7 @@ Widget build(BuildContext context) {
   home: Scaffold(
       body: Center(
         child: SizedBox(
-          height: MediaQuery.of(context).size.height * 0.5,
+          height: MediaQuery.of(context).size.height * 0.3,
           // https://www.youtube.com/watch?v=LpRZi_cOSOI
           child: YoutubeWebPlayer(videoId: 'LpRZi_cOSOI'),
         ),
