@@ -16,7 +16,7 @@ flutter pub add youtube_web_player
 ```
 
 ## Using the player
-```yaml
+```bash
 @override
 Widget build(BuildContext context) {
   return MaterialApp(
