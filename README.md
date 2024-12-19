@@ -54,19 +54,13 @@ YoutubeWebPlayer(
     <table>
         <tr>
             <td style="text-align: center">
-                <a href="https://bloclibrary.dev/tutorials/flutter-counter">
-                    <img src="https://i.ibb.co/HNgM4D1/image-19-12-24-11-58-1.png" width="200"/>
-                </a>
+                <img src="https://i.ibb.co/HNgM4D1/image-19-12-24-11-58-1.png" width="200"/>
             </td>            
             <td style="text-align: center">
-                <a href="https://bloclibrary.dev/tutorials/flutter-infinite-list">
-                    <img src="https://i.ibb.co/rHBFtnJ/image-19-12-24-11-58-2.png" width="200"/>
-                </a>
+                <img src="https://i.ibb.co/rHBFtnJ/image-19-12-24-11-58-2.png" width="200"/>
             </td>
             <td style="text-align: center">
-                <a href="https://bloclibrary.dev/tutorials/flutter-login">
-                    <img src="https://i.ibb.co/R4Qt9PN/image-19-12-24-11-58.png" width="200" />
-                </a>
+                <img src="https://i.ibb.co/R4Qt9PN/image-19-12-24-11-58.png" width="200" />
             </td>
         </tr>
     </table>
