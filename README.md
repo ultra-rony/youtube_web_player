@@ -11,7 +11,7 @@
 
 # youtube_web_player
 
-A Flutter package for playing YouTube videos in a native WebView.
+A Flutter package for seamless integration of YouTube videos in a native WebView, providing a smooth playback experience. Ideal for multimedia applications.
 
 ## Getting Started
 
@@ -27,11 +27,12 @@ flutter pub add youtube_web_player
 ```
 
 ## Using the player
+
 ```bash
 @override
 Widget build(BuildContext context) {
   return MaterialApp(
-  title: 'Flutter Demo',
+  title: 'Youtube web player Demo',
   theme: ThemeData(
     colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
     useMaterial3: true,
@@ -40,7 +41,6 @@ Widget build(BuildContext context) {
       body: Center(
         child: SizedBox(
           height: MediaQuery.of(context).size.height * 0.3,
-          // https://www.youtube.com/watch?v=LpRZi_cOSOI
           child: YoutubeWebPlayer(videoId: 'LpRZi_cOSOI'),
         ),
       ),
@@ -48,7 +48,43 @@ Widget build(BuildContext context) {
   );
 }
 ```
+## Examples
 
-<div style="display: flex;">
-    <img src="https://i.ibb.co/VtXzYp0/image-18-12-24-12-51.png" width="50%" alt=""/>
+<div style="text-align: center">
+    <table>
+        <tr>
+            <td style="text-align: center">
+                <a href="https://bloclibrary.dev/tutorials/flutter-counter">
+                    <img src="https://i.ibb.co/VtXzYp0/image-18-12-24-12-51.png" width="200"/>
+                </a>
+            </td>            
+            <td style="text-align: center">
+                <a href="https://bloclibrary.dev/tutorials/flutter-infinite-list">
+                    <img src="https://i.ibb.co/VtXzYp0/image-18-12-24-12-51.png" width="200"/>
+                </a>
+            </td>
+            <td style="text-align: center">
+                <a href="https://bloclibrary.dev/tutorials/flutter-login">
+                    <img src="https://i.ibb.co/VtXzYp0/image-18-12-24-12-51.png" width="200" />
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center">
+                <a href="https://bloclibrary.dev/tutorials/github-search">
+                    <img src="https://i.ibb.co/VtXzYp0/image-18-12-24-12-51.png" width="200"/>
+                </a>
+            </td>
+            <td style="text-align: center">
+                <a href="https://bloclibrary.dev/tutorials/flutter-weather">
+                    <img src="https://i.ibb.co/VtXzYp0/image-18-12-24-12-51.png" width="200"/>
+                </a>
+            </td>
+            <td style="text-align: center">
+                <a href="https://bloclibrary.dev/tutorials/flutter-todos">
+                    <img src="https://i.ibb.co/VtXzYp0/image-18-12-24-12-51.png" width="200"/>
+                </a>
+            </td>
+        </tr>
+    </table>
 </div>
