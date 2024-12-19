@@ -18,7 +18,7 @@ To use this package, add it to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  youtube_web_player: ^0.1.3
+  youtube_web_player: ^0.1.4
 ```
 ## or
 ```yaml
