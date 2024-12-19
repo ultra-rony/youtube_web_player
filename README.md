@@ -8,7 +8,7 @@ To use this package, add it to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  youtube_web_player: ^0.0.8
+  youtube_web_player: ^0.1.0
 ```
 ## or
 ```yaml
