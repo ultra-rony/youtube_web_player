@@ -20,16 +20,19 @@ class YoutubeWebPlayer extends StatefulWidget {
   final YoutubeWebPlayerController? controller; // The player controller.
   final String videoId; // The ID of the YouTube video to play.
   final bool iframeAllowFullscreen; // Indicates if fullscreen is allowed.
-  final bool allowsInlineMediaPlayback; // Indicates if inline playback is allowed.
+  final bool
+      allowsInlineMediaPlayback; // Indicates if inline playback is allowed.
 
   @override
   State<YoutubeWebPlayer> createState() => _YoutubeWebPlayerState();
 }
 
 class _YoutubeWebPlayerState extends State<YoutubeWebPlayer> {
-  InAppWebViewController? _inAppWebViewController; // Controller for the InAppWebView.
+  InAppWebViewController?
+      _inAppWebViewController; // Controller for the InAppWebView.
   Timer? _getStateInterval; // Timer for periodically checking the video state.
-  YoutubeWebPlayerController? _videoPlayerController; // Controller for video playback.
+  YoutubeWebPlayerController?
+      _videoPlayerController; // Controller for video playback.
 
   @override
   void initState() {
@@ -47,7 +50,8 @@ class _YoutubeWebPlayerState extends State<YoutubeWebPlayer> {
       if (_videoPlayerController!.isDisposed) {
         return; // Exit if the controller is disposed.
       }
-      await Future.delayed(Duration(microseconds: 100)); // Small delay to avoid race conditions.
+      await Future.delayed(
+          Duration(microseconds: 100)); // Small delay to avoid race conditions.
       // Evaluate JavaScript to get the current state of the video.
       final response = await _inAppWebViewController?.evaluateJavascript(
           source: "getState()");
@@ -57,7 +61,8 @@ class _YoutubeWebPlayerState extends State<YoutubeWebPlayer> {
         for (final entry in response.entries) {
           entries[entry.key.toString()] = entry.value.toString();
         }
-        final state = YoutubeWebPlayerState.fromJson(entries); // Convert response to state object.
+        final state = YoutubeWebPlayerState.fromJson(
+            entries); // Convert response to state object.
 
         // Update the video player's state.
         _videoPlayerController?.value.isReady = true; // Mark as ready.
@@ -70,7 +75,8 @@ class _YoutubeWebPlayerState extends State<YoutubeWebPlayer> {
   void dispose() {
     // Clean up resources on widget disposal.
     if (!_videoPlayerController!.isDisposed) {
-      _videoPlayerController?.isDisposed = true; // Mark the controller as disposed.
+      _videoPlayerController?.isDisposed =
+          true; // Mark the controller as disposed.
       _getStateInterval?.cancel(); // Cancel the timer.
       _videoPlayerController?.dispose(); // Dispose of the controller.
       _inAppWebViewController?.dispose(); // Dispose of the WebView controller.
@@ -110,10 +116,12 @@ class _YoutubeWebPlayerState extends State<YoutubeWebPlayer> {
       initialSettings: InAppWebViewSettings(
         iframeAllowFullscreen: widget.iframeAllowFullscreen,
         allowsInlineMediaPlayback: widget.allowsInlineMediaPlayback,
-        transparentBackground: true, // Set a transparent background for the WebView.
+        transparentBackground:
+            true, // Set a transparent background for the WebView.
       ),
       onWebViewCreated: (controller) {
-        _inAppWebViewController = controller; // Assign the controller when created.
+        _inAppWebViewController =
+            controller; // Assign the controller when created.
       },
       onConsoleMessage: (controller, consoleMessage) {
         // Handle console messages for debugging if needed.
