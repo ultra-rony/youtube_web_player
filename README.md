@@ -18,9 +18,11 @@ To use this package, add it to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  youtube_web_player: ^0.1.4
+  youtube_web_player: ^0.1.5
 ```
-## or
+
+or run the command
+
 ```yaml
 flutter pub add youtube_web_player
 ```
