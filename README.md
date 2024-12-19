@@ -1,3 +1,6 @@
+<p align="center">
+    <img src="https://i.ibb.co/fM0sWz8/icon-512.png" height="100" alt="youtube_web_player" />
+</p>
 # youtube_web_player
 
 A Flutter package for playing YouTube videos in a native WebView.
