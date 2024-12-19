@@ -28,6 +28,12 @@ flutter pub add youtube_web_player
 
 ## Using the player
 
+import
+
+```bash
+import 'package:youtube_web_player/youtube_web_player.dart';
+```
+
 ```bash
 YoutubeWebPlayer(videoId: 'NsJLhRGPv-M')
 ```
