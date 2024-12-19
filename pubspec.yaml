@@ -1,8 +1,8 @@
 name: youtube_web_player
 description: "A Flutter package that allows you to seamlessly integrate a native WebView to play YouTube videos. Ideal for apps that require in-app video playback without redirecting to the browser."
-version: 0.0.7
+version: 0.0.8
 repository: https://github.com/ultra-rony/youtube_web_player
-homepage:
+homepage: https://github.com/ultra-rony/youtube_web_player
 
 environment:
   sdk: ^3.6.0
