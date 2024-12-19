@@ -13,15 +13,15 @@ class YoutubeWebPlayer extends StatefulWidget {
     super.key,
     required this.videoId, // Unique ID for the YouTube video.
     this.controller, // Optional custom controller for the player.
-    this.iframeAllowFullscreen = false, // Allow fullscreen mode for iframe.
-    this.allowsInlineMediaPlayback = true, // Allow media playback inline.
+    this.isIframeAllowFullscreen = false, // Allow fullscreen mode for iframe.
+    this.isAllowsInlineMediaPlayback = true, // Allow media playback inline.
   });
 
   final YoutubeWebPlayerController? controller; // The player controller.
   final String videoId; // The ID of the YouTube video to play.
-  final bool iframeAllowFullscreen; // Indicates if fullscreen is allowed.
+  final bool isIframeAllowFullscreen; // Indicates if fullscreen is allowed.
   final bool
-      allowsInlineMediaPlayback; // Indicates if inline playback is allowed.
+      isAllowsInlineMediaPlayback; // Indicates if inline playback is allowed.
 
   @override
   State<YoutubeWebPlayer> createState() => _YoutubeWebPlayerState();
@@ -114,8 +114,8 @@ class _YoutubeWebPlayerState extends State<YoutubeWebPlayer> {
         data: Constants.webPlayer.replaceAll("%VIDEO_ID%", widget.videoId),
       ),
       initialSettings: InAppWebViewSettings(
-        iframeAllowFullscreen: widget.iframeAllowFullscreen,
-        allowsInlineMediaPlayback: widget.allowsInlineMediaPlayback,
+        iframeAllowFullscreen: widget.isIframeAllowFullscreen,
+        allowsInlineMediaPlayback: widget.isAllowsInlineMediaPlayback,
         transparentBackground:
             true, // Set a transparent background for the WebView.
       ),
