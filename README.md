@@ -18,7 +18,7 @@ To use this package, add it to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  youtube_web_player: ^0.1.2
+  youtube_web_player: ^0.1.3
 ```
 ## or
 ```yaml
@@ -32,6 +32,8 @@ import
 ```bash
 import 'package:youtube_web_player/youtube_web_player.dart';
 ```
+
+Full screen disable mode
 
 ```bash
 YoutubeWebPlayer(videoId: 'NsJLhRGPv-M')
