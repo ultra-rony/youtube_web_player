@@ -18,7 +18,7 @@ To use this package, add it to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  youtube_web_player: ^0.1.6
+  youtube_web_player: ^0.1.7
 ```
 
 or run the command
@@ -54,36 +54,47 @@ YoutubeWebPlayer(
 Controller
 
 ```bash
+// Initialize the controller for the YouTube video with the specified ID
 YoutubeWebPlayerController? _controller = YoutubeWebPlayerController.getController("NsJLhRGPv-M");
+
+// Get the duration of the video
 Duration movieDuration = _controller?.value.duration;
+
+// Get the current position of the video (playback time)
 Duration position = _controller?.value.duration;
 
+// Create a YoutubeWebPlayer widget to play the video with the specified ID
 YoutubeWebPlayer(
-    videoId: 'NsJLhRGPv-M',
-    controller: _controller
+    videoId: 'NsJLhRGPv-M',  // YouTube video ID
+    controller: _controller   // Pass the controller for playback control
 ),
-  
+
+// Button to play the video
 TextButton(
     onPressed: () {
-        _controller?.play?.call();
-        //_controller?.pause?.call();
+        _controller?.play?.call(); // Start playing the video if the controller is available
+        //_controller?.pause?.call(); // Commented out line to pause
     },
-    child: Text("Play"),
+    child: Text("Play"), // Button text
 ),
- 
- TextButton(
+
+// Button to rewind the video 5 seconds
+TextButton(
     onPressed: () {
+        // Seek the video forward by 5 seconds from the current position
         _controller!.seekTo!(position + Duration(seconds: 5))?.call();
     },
-    child: Text(">>>"),
+    child: Text(">>>"), // Button text
 ), 
 
+// Button to fast-forward the video 5 seconds
 TextButton(
     onPressed: () {
+        // Seek the video backward by 5 seconds from the current position
         _controller!.seekTo!(position - Duration(seconds: 5))?.call();
     },
-    child: Text("<<<"),
-),
+    child: Text("<<<"), // Button text
+), 
 ```
 
 ## Examples
