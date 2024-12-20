@@ -97,8 +97,6 @@ TextButton(
             <td style="text-align: center">
                 <img src="https://i.ibb.co/rHBFtnJ/image-19-12-24-11-58-2.png" width="200"/>
             </td>
-        </tr>
-        <tr>
             <td style="text-align: center">
                 <img src="https://i.ibb.co/R4Qt9PN/image-19-12-24-11-58.png" width="200" />
             </td>
