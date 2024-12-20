@@ -23,7 +23,7 @@ dependencies:
 
 or run the command
 
-```zsh
+```bash
 flutter pub add youtube_web_player
 ```
 
