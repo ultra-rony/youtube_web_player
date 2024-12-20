@@ -23,7 +23,7 @@ dependencies:
 
 or run the command
 
-```yaml
+```zsh
 flutter pub add youtube_web_player
 ```
 
@@ -31,30 +31,30 @@ flutter pub add youtube_web_player
 
 import
 
-```bash
+```dart
 import 'package:youtube_web_player/youtube_web_player.dart';
 ```
 
 Full screen disable mode
 
-```bash
+```dart
 YoutubeWebPlayer(videoId: 'NsJLhRGPv-M')
 ```
 
 Full screen mode
 
-```bash
+```dart
 YoutubeWebPlayer(
     videoId: 'NsJLhRGPv-M',
     isIframeAllowFullscreen: true,
     isAllowsInlineMediaPlayback: false,
-)
+);
 ```
 
 Controller
 
-```bash
-/// Initialize the controller for the YouTube video with the specified ID
+```dart
+// Initialize the controller for the YouTube video with the specified ID
 YoutubeWebPlayerController? _controller = YoutubeWebPlayerController.getController("NsJLhRGPv-M");
 
 // Get the duration of the video
