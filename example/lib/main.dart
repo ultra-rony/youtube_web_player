@@ -40,7 +40,7 @@ class MyApp extends StatelessWidget {
                           builder: (context) => ExampleList(),
                         ),
                       ),
-                      child: Text("Example 2"),
+                      child: Text("Example 1"),
                     ),
                     TextButton(
                       onPressed: () => Navigator.push(
@@ -49,7 +49,7 @@ class MyApp extends StatelessWidget {
                           builder: (context) => ExampleController(),
                         ),
                       ),
-                      child: Text("Example 3"),
+                      child: Text("Example 2"),
                     ),
                   ],
                 ),
