@@ -1,3 +1,4 @@
+import 'package:example/example_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:youtube_web_player/youtube_web_player.dart';
 
@@ -18,30 +19,42 @@ class MyApp extends StatelessWidget {
       ),
       routes: {
         '/': (context) => Scaffold(
-          appBar: AppBar(
-            title: const Text('youtube_web_player Demo'),
-          ),
-          body: Center(
-            child: Column(
-              children: [
-                SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.3,
-                  child: YoutubeWebPlayer(
-                    videoId: 'NsJLhRGPv-M',
-                    isIframeAllowFullscreen: true,
-                    isAllowsInlineMediaPlayback: false,
-                  ),
+              appBar: AppBar(
+                title: const Text('youtube_web_player Demo'),
+              ),
+              body: Center(
+                child: Column(
+                  children: [
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height * 0.3,
+                      child: YoutubeWebPlayer(
+                        videoId: 'NsJLhRGPv-M',
+                        isIframeAllowFullscreen: true,
+                        isAllowsInlineMediaPlayback: false,
+                      ),
+                    ),
+                    TextButton(
+                      onPressed: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ExampleList(),
+                        ),
+                      ),
+                      child: Text("Example 2"),
+                    ),
+                    TextButton(
+                      onPressed: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ExampleController(),
+                        ),
+                      ),
+                      child: Text("Example 3"),
+                    ),
+                  ],
                 ),
-                TextButton(onPressed: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => ExampleList(),
-                  ),
-                ), child: Text("Example 2"))
-              ],
+              ),
             ),
-          ),
-        ),
       },
     );
   }
