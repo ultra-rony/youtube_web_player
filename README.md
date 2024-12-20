@@ -54,9 +54,9 @@ YoutubeWebPlayer(
 Controller
 
 ```bash
-_controller = YoutubeWebPlayerController.getController("NsJLhRGPv-M");
-final movieDuration = _controller?.value.duration;
-final position = _controller?.value.duration;
+YoutubeWebPlayerController? _controller = YoutubeWebPlayerController.getController("NsJLhRGPv-M");
+Duration movieDuration = _controller?.value.duration;
+Duration position = _controller?.value.duration;
 
 YoutubeWebPlayer(
     videoId: 'NsJLhRGPv-M',
