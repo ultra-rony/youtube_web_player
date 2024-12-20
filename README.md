@@ -54,7 +54,7 @@ YoutubeWebPlayer(
 Controller
 
 ```bash
-// Initialize the controller for the YouTube video with the specified ID
+/// Initialize the controller for the YouTube video with the specified ID
 YoutubeWebPlayerController? _controller = YoutubeWebPlayerController.getController("NsJLhRGPv-M");
 
 // Get the duration of the video
