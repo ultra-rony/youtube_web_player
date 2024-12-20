@@ -42,7 +42,6 @@ class _ExampleControllerState extends State<ExampleController> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               TextButton(onPressed: () {
-                // _controller?.value.duration; getDuration movie
                 _controller!.seekTo!(_controller!.value.position - Duration(seconds: 5))?.call();
               }, child: Text("<<<")),
               TextButton(onPressed: () {
