@@ -50,6 +50,42 @@ YoutubeWebPlayer(
     isAllowsInlineMediaPlayback: false,
 )
 ```
+
+Controller
+
+```bash
+_controller = YoutubeWebPlayerController.getController("NsJLhRGPv-M");
+
+YoutubeWebPlayer(
+    videoId: 'NsJLhRGPv-M',
+    controller: _controller
+),
+  
+TextButton(
+    onPressed: () {
+        _controller?.play?.call();
+        //_controller?.pause?.call();
+    },
+    child: Text("Play"),
+),
+ 
+ TextButton(
+    onPressed: () {
+        _controller!.seekTo!(_controller!.value.position + Duration(seconds: 5))?.call();
+    },
+    child: Text(">>>"),
+), 
+
+TextButton(
+    onPressed: () {
+        _controller!.seekTo!(_controller!.value.position - Duration(seconds: 5))?.call();
+    },
+    child: Text("<<<"),
+),
+  
+final movieDuration = _controller?.value.duration;
+```
+
 ## Examples
 
 <div style="text-align: center">
