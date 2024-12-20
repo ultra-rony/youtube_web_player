@@ -55,6 +55,8 @@ Controller
 
 ```bash
 _controller = YoutubeWebPlayerController.getController("NsJLhRGPv-M");
+final movieDuration = _controller?.value.duration;
+final position = _controller?.value.duration;
 
 YoutubeWebPlayer(
     videoId: 'NsJLhRGPv-M',
@@ -71,19 +73,17 @@ TextButton(
  
  TextButton(
     onPressed: () {
-        _controller!.seekTo!(_controller!.value.position + Duration(seconds: 5))?.call();
+        _controller!.seekTo!(position + Duration(seconds: 5))?.call();
     },
     child: Text(">>>"),
 ), 
 
 TextButton(
     onPressed: () {
-        _controller!.seekTo!(_controller!.value.position - Duration(seconds: 5))?.call();
+        _controller!.seekTo!(position - Duration(seconds: 5))?.call();
     },
     child: Text("<<<"),
 ),
-  
-final movieDuration = _controller?.value.duration;
 ```
 
 ## Examples
