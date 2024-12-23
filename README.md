@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-<a href="https://pub.dev/packages/youtube_web_player"><img src="https://img.shields.io/badge/pub-v0.1.5-blue" alt="Pub"></a>
+<a href="https://pub.dev/packages/youtube_web_player"><img src="https://img.shields.io/badge/pub-v0.1.8-blue" alt="Pub"></a>
 <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/license-MIT-purple.svg" alt="License: MIT"></a>
 </p>
 
@@ -19,7 +19,7 @@ To use this package, add it to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  youtube_web_player: ^0.1.7
+  youtube_web_player: ^0.1.8
 ```
 
 or run the command
@@ -104,16 +104,16 @@ TextButton(
     <table>
         <tr>
             <td style="text-align: center">
-                <img src="https://i.ibb.co/HNgM4D1/image-19-12-24-11-58-1.png" width="200"/>
+                <img src="https://i.ibb.co/HNgM4D1/image-19-12-24-11-58-1.png" width="200" alt=""/>
             </td>            
             <td style="text-align: center">
-                <img src="https://i.ibb.co/rHBFtnJ/image-19-12-24-11-58-2.png" width="200"/>
+                <img src="https://i.ibb.co/rHBFtnJ/image-19-12-24-11-58-2.png" width="200" alt=""/>
             </td>
             <td style="text-align: center">
-                <img src="https://i.ibb.co/R4Qt9PN/image-19-12-24-11-58.png" width="200" />
+                <img src="https://i.ibb.co/R4Qt9PN/image-19-12-24-11-58.png" width="200" alt=""/>
             </td>
             <td style="text-align: center">
-                <img src="https://i.ibb.co/jfGds0R/image-20-12-24-07-13.png" width="200" />
+                <img src="https://i.ibb.co/jfGds0R/image-20-12-24-07-13.png" width="200" alt=""/>
             </td>
         </tr>
     </table>
