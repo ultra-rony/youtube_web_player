@@ -3,6 +3,7 @@
 </p>
 
 <p align="center">
+<a href="https://pub.dev/packages/youtube_web_player"><img src="https://img.shields.io/badge/pub-v0.1.5-blue" alt="Pub"></a>
 <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/license-MIT-purple.svg" alt="License: MIT"></a>
 </p>
 
