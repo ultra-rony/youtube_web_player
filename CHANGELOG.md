@@ -1,3 +1,22 @@
+## 1.0.0
+
+### Stable Release
+This release marks the transition of the `youtube_web_player` package from beta to a stable version.
+
+### Added
+- **Playback Control**: Implemented features for play, pause, and full-screen functionality for a better user experience.
+- **Customizable UI**: Introduced options to customize the player’s appearance to match your app's theme and design.
+
+### Changed
+- **Performance Improvements**: Optimized video loading times, resulting in smoother playback.
+- **Bug Fixes**: Resolved several issues identified during the beta phase, improving overall stability and reliability.
+- **Expanded Documentation**: Enhanced the documentation to include comprehensive examples and setup instructions for easier integration.
+
+### Removed
+- No features have been removed in this release; the focus was on enhancing existing functionalities.
+
+---
+
 ## 0.0.1
 
 ## Initial Release
