@@ -19,7 +19,7 @@ To use this package, add it to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  youtube_web_player: ^0.1.8
+  youtube_web_player: ^0.1.9
 ```
 
 or run the command
@@ -55,47 +55,97 @@ YoutubeWebPlayer(
 Controller
 
 ```dart
-// Initialize the controller for the YouTube video with the specified ID
-YoutubeWebPlayerController? _controller = YoutubeWebPlayerController.getController("NsJLhRGPv-M");
+// Declare a controller for interacting with the YouTube video player
+YoutubeWebPlayerController? _controller;
 
-// Get the duration of the video
-Duration movieDuration = _controller?.value.duration;
+@override
+void initState() {
+  // Initialize the controller when the widget is created
+  _controller = YoutubeWebPlayerController();
+  // Add a listener to track changes in video playback position
+  _controller?.addListener(_positionListener);
+  // Call the superclass method to ensure proper initialization
+  super.initState();
+}
 
-// Get the current position of the video (playback time)
-Duration position = _controller?.value.duration;
+@override
+void dispose() {
+  // Remove the listener when the widget is disposed to avoid memory leaks
+  _controller?.removeListener(_positionListener);
+  // Call the superclass method to ensure proper disposal
+  super.dispose();
+}
 
-// Create a YoutubeWebPlayer widget to play the video with the specified ID
-YoutubeWebPlayer(
-    videoId: 'NsJLhRGPv-M',  // YouTube video ID
-    controller: _controller   // Pass the controller for playback control
-),
+// Listener method that prints the current video playback position to the console
+_positionListener() {
+  print("position: ${_controller!.position}");
+}
 
-// Button to play the video
-TextButton(
-    onPressed: () {
-        _controller?.play?.call(); // Start playing the video if the controller is available
-        //_controller?.pause?.call(); // Commented out line to pause
-    },
-    child: Text("Play"), // Button text
-),
-
-// Button to rewind the video 5 seconds
-TextButton(
-    onPressed: () {
-        // Seek the video forward by 5 seconds from the current position
-        _controller!.seekTo!(position + Duration(seconds: 5))?.call();
-    },
-    child: Text(">>>"), // Button text
-), 
-
-// Button to fast-forward the video 5 seconds
-TextButton(
-    onPressed: () {
-        // Seek the video backward by 5 seconds from the current position
-        _controller!.seekTo!(position - Duration(seconds: 5))?.call();
-    },
-    child: Text("<<<"), // Button text
-), 
+// Build method to create the widget's UI
+@override
+Widget build(BuildContext context) {
+  return Scaffold(
+    // Create a Scaffold to provide a basic material design layout
+    appBar: AppBar(
+      // Set the title of the app
+      title: const Text('youtube_web_player Demo'),
+    ),
+    body: ListView(
+      // Create a ListView for scrolling through multiple widgets
+      padding: const EdgeInsets.all(8),
+      children: <Widget>[
+        SizedBox(
+          height: 300,
+          // Use YoutubeWebPlayer to display the video
+          child: YoutubeWebPlayer(
+            controller: _controller,
+            videoId: "NsJLhRGPv-M",  // Specify the video ID to play
+          ),
+        ),
+        // Play button to start video playback
+        TextButton(
+            onPressed: () => _controller?.play.call(),
+            child: Icon(Icons.play_circle, size: 50)),
+        // Pause button to stop video playback
+        TextButton(
+            onPressed: () => _controller?.pause.call(),
+            child: Icon(Icons.pause_circle, size: 50)),
+        Row(
+          // Align buttons to the center of the row
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            // Button to seek back 5 seconds in the video
+            TextButton(
+                onPressed: () {
+                  _controller!
+                      .seekTo(_controller!.position - Duration(seconds: 5));
+                },
+                child: Icon(Icons.skip_previous, size: 50)),
+            // Button to seek forward 5 seconds in the video
+            TextButton(
+                onPressed: () {
+                  _controller!
+                      .seekTo(_controller!.position + Duration(seconds: 5));
+                },
+                child: Icon(Icons.skip_next, size: 50)),
+          ],
+        ),
+        // Button to set playback speed to normal (1x)
+        TextButton(
+            onPressed: () {
+              _controller?.setPlaybackSpeed(1);
+            },
+            child: Text("SetPlaybackSpeed 1")),
+        // Button to set playback speed to half (0.5x)
+        TextButton(
+            onPressed: () {
+              _controller?.setPlaybackSpeed(0.5);
+            },
+            child: Text("SetPlaybackSpeed 0.5")),
+      ],
+    ),
+  );
+}
 ```
 
 ## Examples

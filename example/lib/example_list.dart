@@ -27,41 +27,38 @@ class ExampleList extends StatelessWidget {
 
   Widget _child(BuildContext context) {
     final screen = MediaQuery.of(context).size;
-    return Row(
+    return Column(
       children: [
         SizedBox(
-          height: screen.height * 0.16,
-          width: screen.width * 0.6,
+          height: screen.height * 0.20,
           child: YoutubeWebPlayer(
             videoId: 'NsJLhRGPv-M',
           ),
         ),
-        Expanded(
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 5),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Text(
-                  _lorem,
-                  maxLines: 1,
-                  textAlign: TextAlign.start,
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16,
-                  ),
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 5),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Text(
+                _lorem,
+                maxLines: 1,
+                textAlign: TextAlign.start,
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16,
                 ),
-                Text(
-                  _lorem,
-                  maxLines: 4,
-                  textAlign: TextAlign.start,
-                  overflow: TextOverflow.ellipsis,
-                ),
-              ],
-            ),
+              ),
+              Text(
+                _lorem,
+                maxLines: 4,
+                textAlign: TextAlign.start,
+                overflow: TextOverflow.ellipsis,
+              ),
+            ],
           ),
-        )
+        ),
       ],
     );
   }
