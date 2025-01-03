@@ -46,7 +46,6 @@ class _ExampleControllerState extends State<ExampleController> {
       ),
       body: ListView(
         // Create a ListView for scrolling through multiple widgets
-        padding: const EdgeInsets.all(8),
         children: <Widget>[
           SizedBox(
             height: 300,
