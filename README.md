@@ -66,21 +66,21 @@ YoutubeWebPlayer(
 ```
 
 ```dart
-  // Add a listener to track changes in video playback position
-  _controller?.addListener(() {
+// Add a listener to track changes in video playback position
+_controller?.addListener(() {
     print("position: ${_controller!.position}");
   };
 );
 ```
 
 ```dart
-  // Button to seek forward 5 seconds in the video
-  _controller!.seekTo(_controller!.position + Duration(seconds: 5));
+// Button to seek forward 5 seconds in the video
+_controller!.seekTo(_controller!.position + Duration(seconds: 5));
 ```
 
 ```dart
-  // Button to set playback speed to half (0.5x)
-  _controller?.setPlaybackSpeed(0.5)
+// Button to set playback speed to half (0.5x)
+_controller?.setPlaybackSpeed(0.5)
 ```
 
 ```dart
