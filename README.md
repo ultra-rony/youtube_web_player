@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-<a href="https://pub.dev/packages/youtube_web_player"><img src="https://img.shields.io/badge/pub-v1.0.1-blue" alt="Pub"></a>
+<a href="https://pub.dev/packages/youtube_web_player"><img src="https://img.shields.io/badge/pub-v1.0.2-blue" alt="Pub"></a>
 <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/license-MIT-purple.svg" alt="License: MIT"></a>
 </p>
 
@@ -19,7 +19,7 @@ To use this package, add it to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  youtube_web_player: ^1.0.1
+  youtube_web_player: ^1.0.2
 ```
 
 or run the command
