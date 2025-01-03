@@ -168,13 +168,9 @@ Widget build(BuildContext context) {
                 <img src="https://i.ibb.co/PTYSNrf/image-03-01-25-05-38.png" width="250" alt=""/>
             </td>
         </tr>
-        <tr>
-            <td style="text-align: center">
-                <div class="sp-embed-player" data-id="cTVeoOneTO4">
-                    <script src="https://go.screenpal.com/player/appearance/cTVeoOneTO4"></script>
-                    <iframe width="100%" height="100%" style="border:0;" scrolling="no" src="https://go.screenpal.com/player/cTVeoOneTO4?width=100%&height=100%&ff=1&title=0" allowfullscreen="true"></iframe>
-                </div>
-            </td>
-        </tr>
     </table>
+</div>
+<div class="sp-embed-player" data-id="cTVeoOneTO4">
+    <script src="https://go.screenpal.com/player/appearance/cTVeoOneTO4"></script>
+    <iframe width="100%" height="100%" style="border:0;" scrolling="no" src="https://go.screenpal.com/player/cTVeoOneTO4?width=100%&height=100%&ff=1&title=0" allowfullscreen="true"></iframe>
 </div>
