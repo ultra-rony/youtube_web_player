@@ -11,8 +11,7 @@
 
 # youtube_web_player
 
-A Flutter package for seamless integration of YouTube videos in a native WebView, providing a smooth
-playback experience. Ideal for multimedia applications.
+A Flutter package for seamless integration of YouTube videos in a native WebView, providing a smooth playback experience. Ideal for multimedia applications.
 
 ## Getting Started
 
@@ -40,26 +39,16 @@ import 'package:youtube_web_player/youtube_web_player.dart';
 Full screen disable mode
 
 ```dart
-YoutubeWebPlayer
-(
-videoId
-:
-'
-NsJLhRGPv-M
-'
-)
+YoutubeWebPlayer(videoId: 'NsJLhRGPv-M')
 ```
 
 Full screen mode
 
 ```dart
-YoutubeWebPlayer
-(
-videoId: 'NsJLhRGPv-M',
-isIframeAllowFullscreen: true,
-isAllowsInlineMediaPlayback:
-false
-,
+YoutubeWebPlayer(
+    videoId: 'NsJLhRGPv-M',
+    isIframeAllowFullscreen: true,
+    isAllowsInlineMediaPlayback: false,
 );
 ```
 
@@ -110,7 +99,7 @@ Widget build(BuildContext context) {
           // Use YoutubeWebPlayer to display the video
           child: YoutubeWebPlayer(
             controller: _controller,
-            videoId: "NsJLhRGPv-M", // Specify the video ID to play
+            videoId: "NsJLhRGPv-M",  // Specify the video ID to play
           ),
         ),
         // Play button to start video playback
