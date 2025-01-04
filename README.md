@@ -3,11 +3,11 @@
 </p>
 
 <p align="center">
-<a href="https://pub.dev/packages/youtube_web_player"><img src="https://img.shields.io/badge/pub-v1.0.6-blue" alt="Pub"></a>
-<a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/license-MIT-purple.svg" alt="License: MIT"></a>
-<a href="https://pub.dev/packages/youtube_web_player/score"><img src="https://img.shields.io/badge/points-160/160-green" alt="Points"></a>
-<a href="https://www.donationalerts.com/r/ultra_rony"><img src="https://img.shields.io/badge/support-donate-yellow" alt="Donate"></a>
-<a href="https://pub.dev/packages/flutter_inappwebview"><img src="https://img.shields.io/badge/flutter_inappwebview-v6.1.5-blue" alt="Inappwebview"></a>
+    <a href="https://pub.dev/packages/youtube_web_player"><img src="https://img.shields.io/badge/pub-v1.0.7-blue" alt="Pub"></a>
+    <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/license-MIT-purple.svg" alt="License: MIT"></a>
+    <a href="https://pub.dev/packages/youtube_web_player/score"><img src="https://img.shields.io/badge/points-160/160-green" alt="Points"></a>
+    <a href="https://www.donationalerts.com/r/ultra_rony"><img src="https://img.shields.io/badge/support-donate-yellow" alt="Donate"></a>
+    <a href="https://pub.dev/packages/flutter_inappwebview"><img src="https://img.shields.io/badge/flutter_inappwebview-v6.1.5-blue" alt="Inappwebview"></a>
 </p>
 
 ---
@@ -24,7 +24,7 @@ To use this package, add it to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  youtube_web_player: ^1.0.6
+  youtube_web_player: ^1.0.7
 ```
 
 or run the command
