@@ -1,15 +1,10 @@
 name: youtube_web_player
 description: "A Flutter package for seamless integration of YouTube videos in a native WebView, providing a smooth playback experience. Ideal for multimedia applications."
-version: 1.0.7
+version: 1.0.8
 repository: https://github.com/ultra-rony/youtube_web_player
-homepage: https://github.com/ultra-rony/youtube_web_player
+homepage: https://rony.fun
 
-topics:
-  - youtube
-  - youtube-player
-  - ywp
-  - player
-  - video
+topics: [youtube, youtube-player, ywp, player, video]
 
 environment:
   sdk: ^3.6.0
@@ -24,3 +19,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^5.0.0
+
+screenshots:
+  - description: The flutter bloc package logo.
+    path: screenshots/logo.png
