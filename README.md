@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://i.ibb.co/rdQfwSg/icon-512.png" height="100" alt="youtube_web_player" />
+    <img src="https://raw.githubusercontent.com/ultra-rony/youtube_web_player/refs/heads/main/screenshots/logo.png" height="100" alt="youtube_web_player" />
 </p>
 
 <p align="center">
