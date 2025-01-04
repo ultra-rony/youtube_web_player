@@ -51,6 +51,7 @@ class _ExampleControllerState extends State<ExampleController> {
             height: 300,
             // Use YoutubeWebPlayer to display the video
             child: YoutubeWebPlayer(
+              isAutoPlay: true,
               controller: _controller,
               videoId: "NsJLhRGPv-M", // Specify the video ID to play
             ),

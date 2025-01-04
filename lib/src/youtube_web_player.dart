@@ -17,6 +17,8 @@ class YoutubeWebPlayer extends StatefulWidget {
     this.isIframeAllowFullscreen = false,
     // Allow inline playback.
     this.isAllowsInlineMediaPlayback = true,
+    // Automatically start playback when the player is ready.
+    this.isAutoPlay = false,
   });
 
   // The player controller, can be null.
@@ -30,6 +32,9 @@ class YoutubeWebPlayer extends StatefulWidget {
 
   // Indicates if inline playback is allowed.
   final bool isAllowsInlineMediaPlayback;
+
+  // Automatically starts the video playback when the player is ready.
+  final bool isAutoPlay;
 
   @override
   State<YoutubeWebPlayer> createState() => _YoutubeWebPlayerState();
@@ -45,6 +50,9 @@ class _YoutubeWebPlayerState extends State<YoutubeWebPlayer>
 
   // Controller for video playback state.
   YoutubeWebPlayerController? _youtubeWebPlayerController;
+
+  // Indicates whether this is the first time the video is being played.
+  bool _isFirstPlay = true;
 
   // Keeps the state alive when switching tabs.
   @override
@@ -111,6 +119,13 @@ class _YoutubeWebPlayerState extends State<YoutubeWebPlayer>
             isPlaying: stateMap['isPlaying'] == true,
           );
         }
+      }
+      // Check if this is the first play, the widget is mounted, and autoplay is enabled.
+      if (_isFirstPlay && mounted && widget.isAutoPlay) {
+        // Set to false after the first play to prevent re-triggering.
+        _isFirstPlay = false;
+        // Call the play method to start playback.
+        _youtubeWebPlayerController?.play.call();
       }
     });
   }
