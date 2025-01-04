@@ -13,8 +13,10 @@
 ---
 
 # youtube_web_player
-
-A Flutter package for seamless integration of YouTube videos in a native WebView, providing a smooth playback experience. Ideal for multimedia applications.
+<p>
+    A Flutter package for seamless integration of YouTube videos in a native WebView, providing a smooth playback experience. Ideal for multimedia applications.<br>
+   <span style="font-size: 0.9em"> Show some ❤️ and <a href="https://github.com/ultra-rony/youtube_web_player">star the repo</a> to support the project! </span>
+</p>
 
 ## Getting Started
 
