@@ -3,8 +3,10 @@
 </p>
 
 <p align="center">
-<a href="https://pub.dev/packages/youtube_web_player"><img src="https://img.shields.io/badge/pub-v1.0.2-blue" alt="Pub"></a>
+<a href="https://pub.dev/packages/youtube_web_player"><img src="https://img.shields.io/badge/pub-v1.0.3-blue" alt="Pub"></a>
 <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/license-MIT-purple.svg" alt="License: MIT"></a>
+<a href="https://pub.dev/packages/youtube_web_player/score"><img src="https://img.shields.io/badge/points-160/160-green" alt="Points"></a>
+<a href="https://www.donationalerts.com/r/ultra_rony"><img src="https://img.shields.io/badge/support-donate-yellow" alt="Donate"></a>
 </p>
 
 ---
@@ -19,7 +21,7 @@ To use this package, add it to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  youtube_web_player: ^1.0.2
+  youtube_web_player: ^1.0.3
 ```
 
 or run the command
@@ -65,21 +67,24 @@ YoutubeWebPlayer(
 );
 ```
 
+Add a listener to track changes in video playback position
+
 ```dart
-// Add a listener to track changes in video playback position
 _controller?.addListener(() {
     print("position: ${_controller!.position}");
   };
 );
 ```
 
+Button to seek forward 5 seconds in the video
+
 ```dart
-// Button to seek forward 5 seconds in the video
 _controller!.seekTo(_controller!.position + Duration(seconds: 5));
 ```
 
+Button to set playback speed to half (0.5x)
+
 ```dart
-// Button to set playback speed to half (0.5x)
 _controller?.setPlaybackSpeed(0.5)
 ```
 
