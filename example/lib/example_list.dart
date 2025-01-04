@@ -4,7 +4,8 @@ import 'package:youtube_web_player/youtube_web_player.dart';
 class ExampleList extends StatelessWidget {
   const ExampleList({super.key});
 
-  final String _lorem = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+  final String _lorem =
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
 
   @override
   Widget build(BuildContext context) {
