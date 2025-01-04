@@ -1,4 +1,4 @@
-class Constants {
+class YoutubeWebPlayerTemplate {
   /// HTML template for the YouTube player embedded in a WebView.
   /// The %VIDEO_ID% placeholder will be replaced with the actual video ID when rendering.
   static String webPlayer = """

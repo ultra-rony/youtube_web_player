@@ -166,8 +166,8 @@ class _YoutubeWebPlayerState extends State<YoutubeWebPlayer>
           child: InAppWebView(
             initialData: InAppWebViewInitialData(
               // Load the YouTube player HTML, replacing the video ID with the current video's ID.
-              data:
-                  Constants.webPlayer.replaceAll("%VIDEO_ID%", widget.videoId),
+              data: YoutubeWebPlayerTemplate.webPlayer
+                  .replaceAll("%VIDEO_ID%", widget.videoId),
             ),
             initialSettings: InAppWebViewSettings(
               // Allow fullscreen mode.
