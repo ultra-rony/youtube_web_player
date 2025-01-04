@@ -46,9 +46,6 @@ class _YoutubeWebPlayerState extends State<YoutubeWebPlayer>
   // Controller for video playback state.
   YoutubeWebPlayerController? _youtubeWebPlayerController;
 
-  // Variable to hold the loaded HTML content
-  String? htmlContent;
-
   // Keeps the state alive when switching tabs.
   @override
   bool get wantKeepAlive => true;
