@@ -22,4 +22,4 @@ dev_dependencies:
 
 screenshots:
   - description: The logo of the youtube_web_player package.
-    path: screenshots/logo.png
+    path: screenshots/package_logo.png
