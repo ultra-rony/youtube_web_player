@@ -160,30 +160,24 @@ class _YoutubeWebPlayerState extends State<YoutubeWebPlayer>
   @override
   Widget build(BuildContext context) {
     super.build(context);
-    return Stack(
-      children: [
-        Positioned.fill(
-          child: InAppWebView(
-            initialData: InAppWebViewInitialData(
-              // Load the YouTube player HTML, replacing the video ID with the current video's ID.
-              data: YoutubeWebPlayerTemplate.webPlayer
-                  .replaceAll("%VIDEO_ID%", widget.videoId),
-            ),
-            initialSettings: InAppWebViewSettings(
-              // Allow fullscreen mode.
-              iframeAllowFullscreen: widget.isIframeAllowFullscreen,
-              // Allow inline playback.
-              allowsInlineMediaPlayback: widget.isAllowsInlineMediaPlayback,
-              // Set a transparent background for the WebView.
-              transparentBackground: true,
-            ),
-            onWebViewCreated: (controller) {
-              // Assign the WebView controller when the WebView is created.
-              _inAppWebViewController = controller;
-            },
-          ),
-        ),
-      ],
+    return InAppWebView(
+      initialData: InAppWebViewInitialData(
+        // Load the YouTube player HTML, replacing the video ID with the current video's ID.
+        data: YoutubeWebPlayerTemplate.webPlayer
+            .replaceAll("%VIDEO_ID%", widget.videoId),
+      ),
+      initialSettings: InAppWebViewSettings(
+        // Allow fullscreen mode.
+        iframeAllowFullscreen: widget.isIframeAllowFullscreen,
+        // Allow inline playback.
+        allowsInlineMediaPlayback: widget.isAllowsInlineMediaPlayback,
+        // Set a transparent background for the WebView.
+        transparentBackground: true,
+      ),
+      onWebViewCreated: (controller) {
+        // Assign the WebView controller when the WebView is created.
+        _inAppWebViewController = controller;
+      },
     );
   }
 }

@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-    <a href="https://pub.dev/packages/youtube_web_player"><img src="https://img.shields.io/badge/pub-v1.1.3-blue" alt="Pub"></a>
+    <a href="https://pub.dev/packages/youtube_web_player"><img src="https://img.shields.io/badge/pub-v1.1.4-blue" alt="Pub"></a>
     <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/license-MIT-purple.svg" alt="License: MIT"></a>
     <a href="https://pub.dev/packages/youtube_web_player/score"><img src="https://img.shields.io/badge/points-160/160-green" alt="Points"></a>
     <a href="https://www.donationalerts.com/r/ultra_rony"><img src="https://img.shields.io/badge/support-donate-yellow" alt="Donate"></a>
@@ -24,7 +24,7 @@ To use this package, add it to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  youtube_web_player: ^1.1.3
+  youtube_web_player: ^1.1.4
 ```
 
 or run the command
@@ -55,6 +55,12 @@ YoutubeWebPlayer(
     isIframeAllowFullscreen: true,
     isAllowsInlineMediaPlayback: false,
 );
+```
+
+To add the permission for internet access in your Android app, you need to include it in your AndroidManifest.xml file. Here’s how to do that:
+
+```xml
+<uses-permission android:name="android.permission.INTERNET"/>
 ```
 
 Controller
