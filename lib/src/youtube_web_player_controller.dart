@@ -79,12 +79,16 @@ class YoutubeWebPlayerController extends ChangeNotifier {
   }) {
     /// Set the pause function.
     this.pause = pause;
+
     /// Set the play function.
     this.play = play;
+
     /// Set the seek function.
     this.seekTo = seekTo;
+
     /// Set the playback speed function.
     this.setPlaybackSpeed = setPlaybackSpeed;
+
     /// Notify listeners that the methods have changed.
     notifyListeners();
   }

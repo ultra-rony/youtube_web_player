@@ -9,18 +9,25 @@ import '../youtube_web_player.dart';
 class YoutubeWebPlayer extends StatefulWidget {
   const YoutubeWebPlayer({
     super.key,
+
     /// Unique ID for the YouTube video to be played.
     required this.videoId,
+
     /// Optional custom controller for the player.
     this.controller,
+
     /// Allow fullscreen for iframe.
     this.isIframeAllowFullscreen = false,
+
     /// Allow inline playback.
     this.isAllowsInlineMediaPlayback = true,
+
     /// Automatically start playback when the player is ready.
     this.isAutoPlay = false,
+
     /// Height of the video player, specified in pixels. This is optional and can be adjusted based on UI needs.
     this.height,
+
     /// Sets the background color of the video player. Default is black.
     this.background = Colors.black,
   });
@@ -71,6 +78,7 @@ class _YoutubeWebPlayerState extends State<YoutubeWebPlayer>
   @override
   void initState() {
     super.initState();
+
     /// Call loadData to initialize the player and video state.
     loadData();
   }
@@ -80,6 +88,7 @@ class _YoutubeWebPlayerState extends State<YoutubeWebPlayer>
     /// Clean up resources on widget disposal.
     /// Dispose the player controller.
     _youtubeWebPlayerController?.dispose();
+
     /// Dispose the WebView controller.
     // _inAppWebViewController?.dispose();
     /// Cancel the state checking timer.
@@ -110,12 +119,14 @@ class _YoutubeWebPlayerState extends State<YoutubeWebPlayer>
         return;
       }
     }
+
     /// Start a timer to check the state of the video every second.
     _getStateInterval = Timer.periodic(const Duration(seconds: 1), (res) async {
       /// Exit if the widget is not mounted.
       if (!mounted) {
         return;
       }
+
       /// Evaluate JavaScript to get the current state of the video.
       final response = await _inAppWebViewController?.evaluateJavascript(
           source: "getState()");
@@ -126,6 +137,7 @@ class _YoutubeWebPlayerState extends State<YoutubeWebPlayer>
           /// Convert response to map.
           stateMap[entry.key.toString()] = entry.value.toString();
         }
+
         /// Update the controller state if values are valid.
         if (double.tryParse(stateMap['position'].toString()) != null &&
             double.tryParse(stateMap['duration'].toString()) != null &&
@@ -137,10 +149,12 @@ class _YoutubeWebPlayerState extends State<YoutubeWebPlayer>
           );
         }
       }
+
       /// Check if this is the first play, the widget is mounted, and autoplay is enabled.
       if (_isFirstPlay && mounted && widget.isAutoPlay) {
         /// Set to false after the first play to prevent re-triggering.
         _isFirstPlay = false;
+
         /// Call the play method to start playback.
         _youtubeWebPlayerController?.play.call();
       }
@@ -189,8 +203,10 @@ class _YoutubeWebPlayerState extends State<YoutubeWebPlayer>
         initialSettings: InAppWebViewSettings(
           /// Allow fullscreen mode.
           iframeAllowFullscreen: widget.isIframeAllowFullscreen,
+
           /// Allow inline playback.
           allowsInlineMediaPlayback: widget.isAllowsInlineMediaPlayback,
+
           /// Set a transparent background for the WebView.
           transparentBackground: true,
         ),
