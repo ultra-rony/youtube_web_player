@@ -43,21 +43,22 @@ class YoutubeWebPlayerHandler {
   /// Returns a [Future] that resolves to a [Map<Object?, Object?>]
   /// containing the state values received from the JavaScript function.
   Future<Map<Object?, Object?>> getState() async {
-    // Ensure the controller is not null before evaluating JavaScript.
+    /// Ensure the controller is not null before evaluating JavaScript.
     if (inAppWebViewController == null) {
       throw Exception("InAppWebViewController is not initialized");
     }
 
-    // Await the result of the JavaScript function call in the WebView.
+    /// Await the result of the JavaScript function call in the WebView.
     final result =
         await inAppWebViewController?.evaluateJavascript(source: "getState()");
 
-    // If result is null, you can either return an empty map or throw an exception
+    /// If result is null, you can either return an empty map or throw an exception
     if (result == null) {
-      return {}; // Return an empty map to avoid 'Null' type issue
+      /// Return an empty map to avoid 'Null' type issue
+      return {};
     }
 
-    // Otherwise, return the result as Map<Object?, Object?>
+    /// Otherwise, return the result as Map<Object?, Object?>
     return result as Map<Object?, Object?>;
   }
 
