@@ -137,7 +137,7 @@ class _YoutubeWebPlayerState extends State<YoutubeWebPlayer>
           _youtubeWebPlayerController?.setPlayerState(
             duration: stateMap['duration'].toString().toDuration()!,
             position: stateMap['position'].toString().toDuration()!,
-            isPlaying: stateMap['isPlaying'] == true,
+            isPlaying: bool.parse(stateMap['isPlaying']!) == true,
           );
         }
       }
