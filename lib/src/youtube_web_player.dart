@@ -71,6 +71,8 @@ class _YoutubeWebPlayerState extends State<YoutubeWebPlayer>
   /// Indicates whether this is the first time the video is being played.
   bool _isFirstPlay = true;
 
+  YoutubeWebPlayerHandler? _youtubeWebPlayerHandler;
+
   /// Keeps the state alive when switching tabs.
   @override
   bool get wantKeepAlive => true;
@@ -105,18 +107,13 @@ class _YoutubeWebPlayerState extends State<YoutubeWebPlayer>
     /// Set the video ID for the controller.
     _youtubeWebPlayerController?.setVideoId(widget.videoId);
 
-    /// Set the methods for controlling the player.
-    _youtubeWebPlayerController?.setMethods(
-      pause: _onPause,
-      play: _onPlay,
-      seekTo: _onSeekTo,
-      setPlaybackSpeed: _onSetPlaybackSpeed,
-    );
-    // /// Cancel the state checking timer.
-    // _getStateInterval?.cancel();
+    /// Check if the interval for getting the state is currently active.
     if (_getStateInterval?.isActive != null) {
+      /// If the interval is active, exit the function to avoid executing further.
       if (_getStateInterval!.isActive) {
         return;
+
+        /// Exit early if the interval is active.
       }
     }
 
@@ -128,23 +125,18 @@ class _YoutubeWebPlayerState extends State<YoutubeWebPlayer>
       }
 
       /// Evaluate JavaScript to get the current state of the video.
-      final response = await _inAppWebViewController?.evaluateJavascript(
-          source: "getState()");
+      final response = await _youtubeWebPlayerHandler?.getState();
       if (response != null) {
         /// Create a map to hold state values.
-        final stateMap = <String, dynamic>{};
-        for (final entry in response.entries) {
-          /// Convert response to map.
-          stateMap[entry.key.toString()] = entry.value.toString();
-        }
+        final stateMap = response.toStringMap();
 
         /// Update the controller state if values are valid.
         if (double.tryParse(stateMap['position'].toString()) != null &&
             double.tryParse(stateMap['duration'].toString()) != null &&
             bool.tryParse(stateMap['isPlaying'].toString()) != null) {
           _youtubeWebPlayerController?.setPlayerState(
-            duration: _getDuration(stateMap['duration'].toString())!,
-            position: _getDuration(stateMap['position'].toString())!,
+            duration: stateMap['duration'].toString().toDuration()!,
+            position: stateMap['position'].toString().toDuration()!,
             isPlaying: stateMap['isPlaying'] == true,
           );
         }
@@ -159,33 +151,6 @@ class _YoutubeWebPlayerState extends State<YoutubeWebPlayer>
         _youtubeWebPlayerController?.play.call();
       }
     });
-  }
-
-  /// Convert a String representing milliseconds to a Duration.
-  Duration? _getDuration(String text) {
-    return Duration(seconds: (double.parse(text)).floor());
-  }
-
-  /// Play the video by sending a message to the WebView.
-  void _onPlay() {
-    _inAppWebViewController?.evaluateJavascript(source: "playerPlay()");
-  }
-
-  /// Pause the video by sending a message to the WebView.
-  void _onPause() {
-    _inAppWebViewController?.evaluateJavascript(source: "playerPause()");
-  }
-
-  /// Seek to a specific duration in the video by sending a message to the WebView.
-  void _onSeekTo(Duration duration) {
-    _inAppWebViewController?.evaluateJavascript(
-        source: "playerSeekTo(${duration.inMilliseconds / 1000})");
-  }
-
-  /// Set the playback speed of the video by sending a message to the WebView.
-  void _onSetPlaybackSpeed(double speed) {
-    _inAppWebViewController?.evaluateJavascript(
-        source: "playerSetPlaybackSpeed($speed)");
   }
 
   @override
@@ -213,6 +178,10 @@ class _YoutubeWebPlayerState extends State<YoutubeWebPlayer>
         onWebViewCreated: (controller) {
           /// Assign the WebView controller when the WebView is created.
           _inAppWebViewController = controller;
+          _youtubeWebPlayerHandler = YoutubeWebPlayerHandler(
+            inAppWebViewController: _inAppWebViewController,
+            youtubeWebPlayerController: _youtubeWebPlayerController,
+          );
         },
       ),
     );
