@@ -77,23 +77,15 @@ class YoutubeWebPlayerController extends ChangeNotifier {
     required Function(Duration duration) seekTo,
     required Function(double speed) setPlaybackSpeed,
   }) {
-    // Set the pause function.
+    /// Set the pause function.
     this.pause = pause;
-    // Set the play function.
+    /// Set the play function.
     this.play = play;
-    // Set the seek function.
+    /// Set the seek function.
     this.seekTo = seekTo;
-    // Set the playback speed function.
+    /// Set the playback speed function.
     this.setPlaybackSpeed = setPlaybackSpeed;
-    // Notify listeners that the methods have changed.
+    /// Notify listeners that the methods have changed.
     notifyListeners();
-  }
-
-  /// Dispose method to clean up resources when the controller is no longer needed.
-  @override
-  void dispose() {
-    // Mark the controller as disposed.
-    setIsDisposed(true);
-    super.dispose();
   }
 }

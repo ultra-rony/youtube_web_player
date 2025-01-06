@@ -25,13 +25,10 @@ class MyApp extends StatelessWidget {
               body: Center(
                 child: Column(
                   children: [
-                    SizedBox(
-                      height: MediaQuery.of(context).size.height * 0.3,
-                      child: YoutubeWebPlayer(
-                        videoId: 'NsJLhRGPv-M',
-                        isIframeAllowFullscreen: true,
-                        isAllowsInlineMediaPlayback: false,
-                      ),
+                    YoutubeWebPlayer(
+                      videoId: 'NsJLhRGPv-M',
+                      isIframeAllowFullscreen: true,
+                      isAllowsInlineMediaPlayback: false,
                     ),
                     TextButton(
                       onPressed: () => Navigator.push(

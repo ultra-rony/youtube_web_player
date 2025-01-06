@@ -26,11 +26,10 @@ class _ExampleControllerState extends State<ExampleController> {
   void dispose() {
     // Remove the listener when the widget is disposed to avoid memory leaks
     _controller?.removeListener(_positionListener);
-    // Call the superclass method to ensure proper disposal
     super.dispose();
   }
 
-// Listener method that prints the current video playback position to the console
+  // Listener method that prints the current video playback position to the console
   _positionListener() {
     print("position: ${_controller!.position}");
   }
