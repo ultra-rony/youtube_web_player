@@ -16,10 +16,13 @@ class YoutubeWebPlayerHandler {
     youtubeWebPlayerController?.setMethods(
       /// Method to pause video playback
       pause: _onPause,
+
       /// Method to start video playback
       play: _onPlay,
+
       /// Method to seek to a specific duration
       seekTo: _onSeekTo,
+
       /// Method to set playback speed
       setPlaybackSpeed: _onSetPlaybackSpeed,
     );
@@ -27,6 +30,7 @@ class YoutubeWebPlayerHandler {
 
   /// Controller for the InAppWebView
   final InAppWebViewController? inAppWebViewController;
+
   /// Controller for YouTube Web Player
   final YoutubeWebPlayerController? youtubeWebPlayerController;
 
@@ -45,7 +49,8 @@ class YoutubeWebPlayerHandler {
     }
 
     // Await the result of the JavaScript function call in the WebView.
-    final result = await inAppWebViewController?.evaluateJavascript(source: "getState()");
+    final result =
+        await inAppWebViewController?.evaluateJavascript(source: "getState()");
 
     // If result is null, you can either return an empty map or throw an exception
     if (result == null) {

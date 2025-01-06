@@ -23,6 +23,7 @@ extension DurationConversionExtension on String {
     } catch (e) {
       /// Handle any parsing exceptions, log if needed
       debugPrint('Error parsing duration from string: $this, error: $e');
+
       /// Return null if the parsing fails
       return null;
     }
