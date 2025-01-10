@@ -108,7 +108,6 @@ class _YoutubeWebPlayerState extends State<YoutubeWebPlayer>
     if (_getStateInterval?.isActive != null) {
       /// If the interval is active, exit the function to avoid executing further.
       if (_getStateInterval!.isActive) {
-
         /// Exit early if the interval is active.
         return;
       }
@@ -153,10 +152,7 @@ class _YoutubeWebPlayerState extends State<YoutubeWebPlayer>
           data: YoutubeWebPlayerTemplate.webPlayer
               .replaceAll("%VIDEO_ID%", widget.videoId)
               .replaceAll("%AUTO_PLAY%", widget.isAutoPlay ? "1" : "0")
-              .replaceAll(
-                "%START%",
-                widget.videoStartTimeSeconds.toString(),
-              ),
+              .replaceAll("%START%", widget.videoStartTimeSeconds.toString()),
         ),
         initialSettings: InAppWebViewSettings(
           /// Allow fullscreen mode.
