@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:youtube_web_player/youtube_web_player.dart';
 
-
 /// A widget that displays a YouTube video using an embedded WebView.
 class YoutubeWebPlayer extends StatefulWidget {
   const YoutubeWebPlayer({
@@ -83,6 +82,7 @@ class _YoutubeWebPlayerState extends State<YoutubeWebPlayer>
   @override
   void initState() {
     super.initState();
+
     /// Use the provided controller or instantiate a new one.
     _youtubeWebPlayerController =
         widget.controller ?? YoutubeWebPlayerController();
@@ -153,8 +153,10 @@ class _YoutubeWebPlayerState extends State<YoutubeWebPlayer>
           data: YoutubeWebPlayerTemplate.webPlayer
               .replaceAll("%VIDEO_ID%", widget.videoId)
               .replaceAll("%AUTO_PLAY%", widget.isAutoPlay ? "1" : "0")
-              .replaceAll("%START%", widget.videoStartTimeSeconds.toString(),
-          ),
+              .replaceAll(
+                "%START%",
+                widget.videoStartTimeSeconds.toString(),
+              ),
         ),
         initialSettings: InAppWebViewSettings(
           /// Allow fullscreen mode.
