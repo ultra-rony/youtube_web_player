@@ -53,6 +53,7 @@ class _ExampleControllerState extends State<ExampleController> {
               isAutoPlay: true,
               controller: _controller,
               videoId: "NsJLhRGPv-M", // Specify the video ID to play
+              videoStartTimeSeconds: 35,
             ),
           ),
           // Play button to start video playback

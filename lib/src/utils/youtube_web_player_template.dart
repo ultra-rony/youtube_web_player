@@ -98,7 +98,7 @@ class YoutubeWebPlayerTemplate {
     </head>
     <body>
         <iframe id="v" width="100%" height="100%"
-                src="https://www.youtube.com/embed/%VIDEO_ID%?disablekb=1&enablejsapi=1&controls=0&fs=0&playsinline=1"
+                src="https://www.youtube.com/embed/%VIDEO_ID%?disablekb=1&enablejsapi=1&controls=0&fs=0&playsinline=1&autoplay=%AUTO_PLAY%&start=%START%"
                 title="YouTube video player" frameborder="0"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                 referrerpolicy="strict-origin-when-cross-origin" donotallowfullscreen="1"
