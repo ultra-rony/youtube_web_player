@@ -3,41 +3,51 @@ import 'package:flutter/material.dart';
 /// Controller for managing the state of the YouTube Web Player.
 class YoutubeWebPlayerController extends ChangeNotifier {
   /// Function to pause the video playback.
-  Function() pause = () {};
+  Function() _pause = () {};
+  Function() get pause => _pause;
 
   /// Function to start video playback.
-  Function() play = () {};
+  Function() _play = () {};
+  Function() get play => _play;
 
   /// Function to seek to a specific time in the video.
-  Function(Duration duration) seekTo = (Duration duration) {};
+  Function(Duration duration) _seekTo = (Duration duration) {};
+  Function(Duration duration) get seekTo => _seekTo;
 
   /// Function to set the playback speed of the video.
-  Function(double speed) setPlaybackSpeed = (double speed) {};
+  Function(double speed) _setPlaybackSpeed = (double speed) {};
+  Function(double speed) get setPlaybackSpeed => _setPlaybackSpeed;
 
   /// ID of the YouTube video currently being played.
-  String? videoId;
+  String? _videoId;
+  String? get videoId => _videoId;
 
   /// Indicates whether the controller has been disposed of.
-  bool isDisposed = false;
+  bool _isDisposed = false;
+  bool get isDisposed => _isDisposed;
 
   /// Duration of the video.
-  Duration duration = Duration.zero;
+  Duration _duration = Duration.zero;
+  Duration get duration => _duration;
 
   /// Current position of the video playback.
-  Duration position = Duration.zero;
+  Duration _position = Duration.zero;
+  Duration get position => _position;
 
   /// Indicates if the video is currently playing.
-  bool isPlaying = false;
+  bool _isPlaying = false;
+  bool get isPlaying => _isPlaying;
 
   /// Indicates if the video player is ready to play.
-  bool isReady = false;
+  bool _isReady = false;
+  bool get isReady => _isReady;
 
   /// Constructor that initializes the controller without any initial values.
   YoutubeWebPlayerController();
 
   /// Method to set the video ID for the controller.
   void setVideoId(String videoId) {
-    this.videoId = videoId;
+    _videoId = videoId;
     // Notify listeners that video ID has changed.
     notifyListeners();
   }
@@ -49,24 +59,24 @@ class YoutubeWebPlayerController extends ChangeNotifier {
     required bool isPlaying,
   }) {
     // Update the video duration.
-    this.duration = duration;
+    _duration = duration;
     // Update the current playback position.
-    this.position = position;
+    _position = position;
     // Update the play status.
-    this.isPlaying = isPlaying;
+    _isPlaying = isPlaying;
     // Notify listeners about state changes.
     notifyListeners();
   }
 
   /// Method to set the readiness status of the player.
   void setIsReady(bool isReady) {
-    this.isReady = isReady;
+    _isReady = isReady;
     notifyListeners();
   }
 
   /// Method to mark the controller as disposed.
   void setIsDisposed(bool isDisposed) {
-    this.isDisposed = isDisposed;
+    _isDisposed = isDisposed;
     notifyListeners();
   }
 
@@ -78,16 +88,16 @@ class YoutubeWebPlayerController extends ChangeNotifier {
     required Function(double speed) setPlaybackSpeed,
   }) {
     /// Set the pause function.
-    this.pause = pause;
+    _pause = pause;
 
     /// Set the play function.
-    this.play = play;
+    _play = play;
 
     /// Set the seek function.
-    this.seekTo = seekTo;
+    _seekTo = seekTo;
 
     /// Set the playback speed function.
-    this.setPlaybackSpeed = setPlaybackSpeed;
+    _setPlaybackSpeed = setPlaybackSpeed;
 
     /// Notify listeners that the methods have changed.
     notifyListeners();
