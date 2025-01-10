@@ -104,27 +104,29 @@ class YoutubeWebPlayerTemplate {
                 referrerpolicy="strict-origin-when-cross-origin" donotallowfullscreen="1"
                 allowfullscreen="0">
         </iframe>
-    <script>
-        var tag = document.createElement('script');
-        tag.src = "https://www.youtube.com/player_api";
-        var firstScriptTag = document.getElementsByTagName('script')[0];
-        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-    
-        var player;
-        function onYouTubePlayerAPIReady() {
-            player = new YT.Player(document.getElementById("v"), {
-                height: window.screen.height.toString(),
-                width: window.screen.width.toString(),
-                videoId: "%VIDEO_ID%",
-                playerVars: { 'autoplay': 1, 'controls': 0, 'showinfo': 0, 'fs': 0, 'playsinline': 1 },
-                events: {
-                    'onReady': onPlayerReady,
-                    'onPlaybackQualityChange': onPlayerPlaybackQualityChange,
-                    'onStateChange': onPlayerStateChange,
-                    'onError': onPlayerError
-                }
-            });
-        }
-    </script>
+        <script>
+            var tag = document.createElement('script');
+            tag.src = "https://www.youtube.com/player_api";
+            var firstScriptTag = document.getElementsByTagName('script')[0];
+            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+        
+            var player;
+            function onYouTubePlayerAPIReady() {
+                player = new YT.Player(document.getElementById("v"), {
+                    height: window.screen.height.toString(),
+                    width: window.screen.width.toString(),
+                    videoId: "%VIDEO_ID%",
+                    playerVars: { 'autoplay': 1, 'controls': 0, 'showinfo': 0, 'fs': 0, 'playsinline': 1 },
+                    events: {
+                        'onReady': onPlayerReady,
+                        'onPlaybackQualityChange': onPlayerPlaybackQualityChange,
+                        'onStateChange': onPlayerStateChange,
+                        'onError': onPlayerError
+                    }
+                });
+            }
+        </script>
+    </body>
+  </html>
   """;
 }
