@@ -76,6 +76,8 @@ YoutubeWebPlayer(
     isIframeAllowFullscreen: true,
     isAllowsInlineMediaPlayback: false,
     videoStartTimeSeconds: 35,
+    height: 300,
+    background: Colors.black,
 );
 ```
 

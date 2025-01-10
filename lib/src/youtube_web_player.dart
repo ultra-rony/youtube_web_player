@@ -108,9 +108,9 @@ class _YoutubeWebPlayerState extends State<YoutubeWebPlayer>
     if (_getStateInterval?.isActive != null) {
       /// If the interval is active, exit the function to avoid executing further.
       if (_getStateInterval!.isActive) {
-        return;
 
         /// Exit early if the interval is active.
+        return;
       }
     }
 

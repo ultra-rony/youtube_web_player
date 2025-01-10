@@ -4,7 +4,7 @@ version: 1.2.1
 repository: https://github.com/ultra-rony/youtube_web_player
 homepage: https://rony.fun
 
-topics: [youtube, youtube-player, player, video]
+topics: [youtube, youtube-player, video-player, player, video]
 
 environment:
   sdk: ^3.6.0
