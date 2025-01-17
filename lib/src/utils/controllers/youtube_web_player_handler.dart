@@ -1,5 +1,5 @@
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
-import 'controller.dart';
+import 'controllers.dart';
 
 /// A handler class for controlling a YouTube web player within an InAppWebView.
 /// It facilitates communication between the Flutter app and the web player.
