@@ -200,13 +200,7 @@ Widget build(BuildContext context) {
 
 <div style="text-align: center">
     <table>
-        <tr>
-            <td style="text-align: center">
-                <img src="https://i.ibb.co/PTYSNrf/image-03-01-25-05-38.png" width="300" alt=""/>
-            </td>
-            <td style="text-align: center">
-                <img src="https://i.ibb.co/HNgM4D1/image-19-12-24-11-58-1.png" width="300" alt=""/>
-            </td>            
+        <tr>         
             <td style="text-align: center">
                 <img src="https://i.ibb.co/rHBFtnJ/image-19-12-24-11-58-2.png" width="300" alt=""/>
             </td>
